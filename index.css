@@ -24,7 +24,7 @@ body {
     padding: 0 16px;
     z-index: 2;
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     background: rgba(0, 0, 0, 0.6);
     overflow: scroll;
 }
