@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css">
+    <title>PrettyImages</title>
+</head>
+<body>
+    <div class="full-img-container">
+        <div class="reference">Photo by <a id="author" href="https://unsplash.com/@anniespratt?utm_source=PrettyImages&utm_medium=referral" target="_blank">Annie Spratt</a> on <a id="unsplash" href="https://unsplash.com/?utm_source=PrettyImages&utm_medium=referral" target="_blank">Unsplash</a></div>
+        <button class="big-download" onclick='openDownload("./test-resources/1.jpg")'><i class="fa-solid fa-download"></i></button>
+        <button onclick='toggleImage("./test-resources/1.jpg")' class="close"><i class="fa-solid fa-xmark"></i></button>
+        <img id="full-img" src="./test-resources/1.jpg" alt="full-image">
+    </div>
+    <header id="header">
+        <a href="/index.html" class="logo">PrettyImages</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm ảnh..." id="search-bar" autocomplete="off"/>
+            <i class="fa-solid fa-magnifying-glass" onclick="loadImages()"></i>
+        </div>
+    </header>
+    <div id="search-for">Bạn muốn tìm gì?</div>
+    <div id="image-container">
+        <div class="img">
+            <img src="./test-resources/1.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/1.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick='toggleImage({src: "./test-resources/1.jpg", downloadSRC: "./test-resources/1.jpg"})' class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/2.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/2.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/2.jpg', downloadSRC: './test-resources/2.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/3.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/3.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/3.jpg', downloadSRC: './test-resources/3.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/4.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/4.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/4.jpg', downloadSRC: './test-resources/4.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/5.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/5.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/5.jpg', downloadSRC: './test-resources/5.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/6.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/6.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/6.jpg', downloadSRC: './test-resources/6.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/7.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/7.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/7.jpg', downloadSRC: './test-resources/7.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/8.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/8.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/8.jpg', downloadSRC: './test-resources/8.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div><div class="img">
+            <img src="./test-resources/9.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/9.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/9.jpg', downloadSRC: './test-resources/9.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/10.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/10.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/10.jpg', downloadSRC: './test-resources/10.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/11.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/11.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/11.jpg', downloadSRC: './test-resources/11.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/12.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/12.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/12.jpg', downloadSRC: './test-resources/12.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/13.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/13.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/13.jpg', downloadSRC: './test-resources/13.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/14.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/14.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/14.jpg', downloadSRC: './test-resources/14.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/15.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/15.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/15.jpg', downloadSRC: './test-resources/15.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/16.webp" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/16.webp")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/16.webp', downloadSRC: './test-resources/16.webp'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/17.png" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/17.png")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/17.png', downloadSRC: './test-resources/17.png'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/18.png" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/18.png")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/18.png', downloadSRC: './test-resources/18.png'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/19.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/19.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/19.jpg', downloadSRC: './test-resources/19.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/20.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/20.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/20.jpg', downloadSRC: './test-resources/20.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/21.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/21.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/21.jpg', downloadSRC: './test-resources/21.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/29.jfif" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/29.jfif")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/29.jfif', downloadSRC: './test-resources/29.jfif'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/22.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/22.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/22.jpg', downloadSRC: './test-resources/22.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/23.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/23.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/23.jpg', downloadSRC: './test-resources/23.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+        <div class="img">
+            <img src="./test-resources/24.jpg" alt="">
+            <div class="img-button-container">
+                <button onclick='openDownload("./test-resources/24.jpg")' class="small-download"><i class="fa-solid fa-download"></i></button>
+                <button onclick="toggleImage({src: './test-resources/24.jpg', downloadSRC: './test-resources/24.jpg'})" class="expand"><i class="fa-solid fa-expand"></i></button>
+            </div>
+        </div>
+    </div>
+    <a href="#header" class="scroll-up-button"><i class="fa-solid fa-arrow-up-from-bracket"></i></a>
+    <script src="index.js"></script>
+</body>
+</html>
