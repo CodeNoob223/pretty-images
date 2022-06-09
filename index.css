@@ -20,7 +20,6 @@ body {
 .full-img-container {
     display: none;
     position: fixed;
-    top: 20px;
     text-align: right;
     padding: 0 16px;
     z-index: 2;
